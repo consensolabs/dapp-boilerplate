@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Box, GU, textStyle, useTheme } from '@aragon/ui'
 import { formatUnits } from '../../lib/math-utils'
@@ -32,26 +33,26 @@ function CourtStats() {
             >
               <span
                 css={`
-                  ${textStyle('body2')};
+                  ${textStyle('body2')}
                   color: ${theme.surfaceContentSecondary};
                   display: block;
                   margin-bottom: ${1 * GU}px;
                 `}
               >
-                {stat.label}
+                {/* {stat.label} */}
               </span>
               {stat.token ? (
                 <TokenStats stat={stat} theme={theme} />
               ) : (
-                <span
-                  css={`
+                  <span
+                    css={`
                     ${textStyle('title2')};
                     font-weight: 300;
                   `}
-                >
-                  {!stat.error ? stat.value : '-'}
-                </span>
-              )}
+                  >
+                    {/* {!stat.error ? stat.value : '-'} */}
+                  </span>
+                )}
             </div>
           )
         })
@@ -62,7 +63,8 @@ function CourtStats() {
 
 function TokenStats({ stat, theme }) {
   const { value, token, error } = stat
-  const { decimals, icon, symbol } = token
+  // const { decimals, icon, symbol } = token
+  const { decimals, symbol } = token
   return (
     <>
       <div
@@ -79,8 +81,8 @@ function TokenStats({ stat, theme }) {
           {!error ? (
             <SplitAmount amount={formatUnits(value, { digits: decimals })} />
           ) : (
-            '-'
-          )}
+              '-'
+            )}
         </span>
         {!error && (
           <div
@@ -88,14 +90,14 @@ function TokenStats({ stat, theme }) {
               display: inline-flex;
             `}
           >
-            <img
+            {/* <img
               css={`
                 margin-right: ${0.5 * GU}px;
               `}
               height="20"
               width="18"
               src={icon}
-            />
+            /> */}
           </div>
         )}
       </div>

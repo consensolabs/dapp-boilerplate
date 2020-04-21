@@ -1,5 +1,4 @@
 import { useMemo } from 'react'
-
 import { useWallet } from '../providers/Wallet'
 import { useCourtClock } from '../providers/CourtClock'
 import { useCourtConfig } from '../providers/CourtConfig'

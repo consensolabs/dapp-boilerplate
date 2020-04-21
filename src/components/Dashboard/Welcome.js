@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button, GU, textStyle, useTheme } from '@aragon/ui'
+// import { Button, GU, textStyle, useTheme } from '@aragon/ui'
+import { GU } from '@aragon/ui'
 
-import ANJIcon from '../../assets/IconANJButton.svg'
-import Logo from '../../assets/Welcome.svg'
+// import ANJIcon from '../../assets/IconANJButton.svg'
+// import Logo from '../../assets/Welcome.svg'
 
 function Welcome() {
-  const theme = useTheme()
+  // const theme = useTheme()
 
   return (
     <div
@@ -18,23 +19,23 @@ function Welcome() {
         flex-wrap: wrap;
       `}
     >
-      <img src={Logo} alt="" height={35 * GU} width={60 * GU} />
+      {/* <img src={Logo} alt="" height={35 * GU} width={60 * GU} /> */}
       <div
-        css={`
-          padding: ${4 * GU}px;
-          width: 550px;
-        `}
+      // css={`
+      //   padding: ${4 * GU}px;
+      //   width: 550px;
+      // `}
       >
-        <h1
+        {/* <h1
           css={`
             ${textStyle('title1')}
             font-weight: 200;
             margin-bottom: ${1 * GU}px;
           `}
         >
-          Welcome to Aragon Court
-        </h1>
-        <p
+          Welcome to Aragon Court 
+        </h1> */}
+        {/* <p
           css={`
             ${textStyle('body1')}
             color: ${theme.contentSecondary};
@@ -43,14 +44,14 @@ function Welcome() {
         >
           Aragon Court handles subjective disputes that require the judgment of
           human jurors.
-        </p>
+        </p> */}
         <div
           css={`
             display: flex;
             align-items: center;
           `}
         >
-          <Button
+          {/* <Button
             icon={
               <img
                 src={ANJIcon}
@@ -68,14 +69,14 @@ function Welcome() {
               margin-right: ${1.5 * GU}px;
               width: 150px;
             `}
-          />
-          <Button
+          /> */}
+          {/* <Button
             label="User guide"
             href="https://help.aragon.org/article/41-aragon-court"
             css={`
               width: ${19 * GU}px;
             `}
-          />
+          /> */}
         </div>
       </div>
     </div>
