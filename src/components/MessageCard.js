@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Box, GU, LoadingRing, textStyle, Link, useTheme } from '@aragon/ui'
 
 export default function MessageCard({
-  icon,
+  // icon,
   title,
   paragraph,
   loading,
@@ -25,7 +26,7 @@ export default function MessageCard({
           align-items: center;
         `}
       >
-        <img
+        {/* <img
           src={icon}
           alt=""
           css={`
@@ -35,7 +36,7 @@ export default function MessageCard({
             height: auto;
             margin: ${4 * GU}px 0;
           `}
-        />
+        /> */}
         {loading ? (
           <div
             css={`
@@ -58,17 +59,17 @@ export default function MessageCard({
             </span>
           </div>
         ) : (
-          <>
-            <span
-              css={`
+            <>
+              <span
+                css={`
                 ${textStyle(isCompactMode ? 'title4' : 'title2')};
                 text-align: center;
               `}
-            >
-              {title}
-            </span>
-            <div
-              css={`
+              >
+                {/* {title} */}
+              </span>
+              <div
+                css={`
                 ${textStyle('body2')};
                 color: ${theme.surfaceContentSecondary};
                 margin-top: ${1.5 * GU}px;
@@ -76,12 +77,12 @@ export default function MessageCard({
                 display: flex;
                 text-align: center;
               `}
-            >
-              {paragraph}
-            </div>
-            {link && <Link onClick={link.action}>{link.text}</Link>}
-          </>
-        )}
+              >
+                {/* {paragraph} */}
+              </div>
+              {link && <Link onClick={link.action}>{link.text}</Link>}
+            </>
+          )}
       </div>
     </Container>
   )
