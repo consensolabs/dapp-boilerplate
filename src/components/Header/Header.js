@@ -52,7 +52,8 @@ const Header = React.memo(function Header({
           height: 100%;
         `}
       >
-        {!compactMode && <ClockModule />}
+        {/* {!compactMode && <ClockModule />} */}
+        {!compactMode && null}
         <div
           css={`
             display: flex;
@@ -60,6 +61,7 @@ const Header = React.memo(function Header({
           `}
         >
           <AccountModule />
+
         </div>
         <div
           css={`
