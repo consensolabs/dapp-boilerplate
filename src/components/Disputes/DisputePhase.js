@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { GU, textStyle, Timer, useTheme } from '@aragon/ui'
 
@@ -59,8 +61,8 @@ function DisputePhase({ finalRuling, nextTransition, phase }) {
       {finalRuling ? (
         <DisputeOutcomeText outcome={finalRuling} isFinalRuling />
       ) : (
-        <DisplayTime phase={phase} nextTransition={nextTransition} />
-      )}
+          <DisplayTime phase={phase} nextTransition={nextTransition} />
+        )}
     </div>
   )
 }

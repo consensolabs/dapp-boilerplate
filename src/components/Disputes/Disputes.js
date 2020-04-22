@@ -1,8 +1,10 @@
-import React, { useCallback, useState } from 'react'
+/* eslint-disable prettier/prettier */
+// import {useCallback} from 'react';
+import React, { useState } from 'react'
 import { Tabs, Tag } from '@aragon/ui'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
-import DisputeList from './DisputeList'
+// import DisputeList from './DisputeList'
 import TitleHeader from '../TitleHeader'
 import useDisputes from '../../hooks/useDisputes'
 import { useJurorDraftQuery } from '../../hooks/query-hooks'
@@ -13,8 +15,8 @@ function Disputes() {
   const [screenIndex, setScreenIndex] = useState(0)
   const {
     disputes,
-    fetching: disputesFetching,
-    error: errorFetching,
+    // fetching: disputesFetching,
+    // error: errorFetching,
   } = useDisputes()
 
   // Query for all dispute ids where the juror has been drafted
@@ -24,13 +26,13 @@ function Disputes() {
     jurorDisputeIds.includes(dispute.id)
   )
 
-  const history = useHistory()
-  const handleSelectDispute = useCallback(
-    id => {
-      history.push(`/disputes/${id}`)
-    },
-    [history]
-  )
+  // const history = useHistory()
+  // const handleSelectDispute = useCallback(
+  //   id => {
+  //     history.push(`/disputes/${id}`)
+  //   },
+  //   [history]
+  // )
 
   const handleTabChange = screenIndex => {
     setScreenIndex(screenIndex)
@@ -62,13 +64,13 @@ function Disputes() {
         onChange={handleTabChange}
       />
 
-      <DisputeList
+      {/* <DisputeList
         disputes={screenIndex === 0 ? disputes : jurorDisputes}
         loading={disputesFetching}
         errorLoading={errorFetching}
         myDisputeSelected={screenIndex === 1}
         onSelectDispute={handleSelectDispute}
-      />
+      /> */}
     </>
   )
 }
