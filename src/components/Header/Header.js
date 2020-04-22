@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import { ButtonIcon, GU, IconMenu } from '@aragon/ui'
 import AccountModule from '../Account/AccountModule'
@@ -33,13 +34,15 @@ const Header = React.memo(function Header({
           padding-left: ${3 * GU}px;
         `}
       >
-        {compactMode ? (
+        <p>GitFunded</p>
+        {/* {compactMode ? (
           <ButtonIcon label="Open menu" onClick={toggleMenuPanel}>
             <IconMenu />
           </ButtonIcon>
         ) : (
-          <HeaderLogo />
-        )}
+            <HeaderLogo />
+
+          )} */}
       </div>
 
       <div
