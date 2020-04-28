@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import {
   Box,
@@ -218,7 +220,7 @@ const DisputeInfo = ({ dispute }) => {
         </div>
         <Button
           mode="strong"
-          onClick={() => {}}
+          onClick={() => { }}
           wide
           css={`
             background: ${theme.surfaceContentSecondary};

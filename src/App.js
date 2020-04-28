@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { Main } from '@aragon/ui'
@@ -16,11 +18,11 @@ function App() {
     <BrowserRouter>
       <Main layout={false} theme={theme}>
         <MainView>
-          <Redirect from="/" to="/dashboard" />
+          <Redirect from='/' to='/dashboard' />
           <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route exact path="/tasks" component={Tasks} />
-            <Route exact path="/disputes" component={Disputes} />
+            <Route path='/dashboard' component={Dashboard} />
+            <Route exact path='/tasks' component={Tasks} />
+            <Route exact path='/disputes' component={Disputes} />
             <Route component={ErrorPage} />
           </Switch>
         </MainView>

@@ -1,10 +1,12 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { GU, useTheme } from '@aragon/ui'
 
 function TasksAmounts({ amount, status }) {
   const theme = useTheme()
   return (
-    <div css="display: inline-block">
+    <div css='display: inline-block'>
       <div
         css={`
           width: ${5 * GU}px;

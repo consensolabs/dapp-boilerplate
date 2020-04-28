@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import sha3 from 'js-sha3'
 const { keccak_256: keccak256 } = sha3
 

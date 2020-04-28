@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 
 import { GU, textStyle, useTheme } from '@aragon/ui'

@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { BackButton, Bar, Box, Split } from '@aragon/ui'
 
@@ -23,8 +25,8 @@ function DisputeDetail({ dispute, onBack }) {
         }
         secondary={
           <React.Fragment>
-            <Box heading="Voting results">Results</Box>
-            <Box heading="Dispute timeline" padding={0}>
+            <Box heading='Voting results'>Results</Box>
+            <Box heading='Dispute timeline' padding={0}>
               <DisputeTimeline />
             </Box>
           </React.Fragment>

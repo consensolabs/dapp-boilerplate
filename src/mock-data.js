@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import {
   DISPUTE_STATUS_OPEN,
   DISPUTE_STATUS_APPEAL,

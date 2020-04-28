@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 import { ButtonBase, GU, useTheme, textStyle } from '@aragon/ui'
@@ -30,9 +32,9 @@ function NavBar() {
         Menu
       </h2>
 
-      <NavItem to="/dashboard" icon={menuIcon} label="Dashboard" />
-      <NavItem to="/tasks" icon={menuIcon} label="Tasks" />
-      <NavItem to="/disputes" icon={menuIcon} label="Disputes" />
+      <NavItem to='/dashboard' icon={menuIcon} label='Dashboard' />
+      <NavItem to='/tasks' icon={menuIcon} label='Tasks' />
+      <NavItem to='/disputes' icon={menuIcon} label='Disputes' />
     </nav>
   )
 }
@@ -75,7 +77,7 @@ function NavItem({ to, icon, label }) {
         `}
       />
 
-      <img src={icon} alt="" />
+      <img src={icon} alt='' />
       <span
         css={`
           margin-left: ${1 * GU}px;

@@ -1,11 +1,13 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { Box, Distribution } from '@aragon/ui'
 
 const CourtStats = () => {
   return (
-    <Box heading="Court Stats">
+    <Box heading='Court Stats'>
       <Distribution
-        heading="Disputes"
+        heading='Disputes'
         items={[
           { item: 'New', percentage: 37 },
           { item: 'Adjudicated', percentage: 22 },

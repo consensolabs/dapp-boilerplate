@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Tag, GU } from '@aragon/ui'
@@ -22,7 +24,7 @@ function LocalLabelPopoverTitle({ label }) {
         {label}
       </span>
       <Tag
-        mode="identifier"
+        mode='identifier'
         css={`
           margin-left: ${2 * GU}px;
         `}

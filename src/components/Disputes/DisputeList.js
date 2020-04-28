@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import {
   Bar,
@@ -29,8 +31,8 @@ function DisputeList({ disputes, selectDispute }) {
           `}
         >
           <DropDown
-            header="Disputes"
-            placeholder="Disputes"
+            header='Disputes'
+            placeholder='Disputes'
             // selected={disputeStatusFilter}
             // onChange={handleDisputeStatusFilterChange}
             items={[
@@ -47,22 +49,22 @@ function DisputeList({ disputes, selectDispute }) {
                     ${textStyle('label3')};
                   `}
                 >
-                  <Tag limitDigits={4} label={disputes.length} size="small" />
+                  <Tag limitDigits={4} label={disputes.length} size='small' />
                 </span>
               </div>,
               'Open',
               'Appeal',
               'Closed',
             ]}
-            width="128px"
+            width='128px'
           />
           <DropDown
-            header="Status"
-            placeholder="Status"
+            header='Status'
+            placeholder='Status'
             // selected={disputeStatusFilter}
             // onChange={handleDisputeStatusFilterChange}
             items={[]}
-            width="128px"
+            width='128px'
           />
           <DateRangePicker
           // startDate={disputeDateRangeFilter.start}
@@ -73,7 +75,7 @@ function DisputeList({ disputes, selectDispute }) {
         </div>
       </Bar>
       <CardLayout columnWidthMin={30 * GU} rowHeight={307}>
-        {disputes.map(dispute => {
+        {disputes.map((dispute) => {
           return (
             <DisputeCard
               key={dispute.id}

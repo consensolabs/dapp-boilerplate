@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { Accordion, GU, IconFolder, useTheme } from '@aragon/ui'
 

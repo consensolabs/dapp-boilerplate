@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { DropDown, DateRangePicker, GU, SearchInput } from '@aragon/ui'
 
@@ -12,25 +13,25 @@ const TasksFilters = ({ dateRangeFilter, onDateRangeChange }) => {
       `}
     >
       <DropDown
-        placeholder="All Tasks"
-        header="All Tasks"
+        placeholder='All Tasks'
+        header='All Tasks'
         items={[]}
         onChange={() => {}}
-        width="128px"
+        width='128px'
       />
       <DropDown
-        placeholder="Status"
-        header="Status"
+        placeholder='Status'
+        header='Status'
         items={[]}
         onChange={() => {}}
-        width="128px"
+        width='128px'
       />
       <DropDown
-        placeholder="Priority"
-        header="Priority"
+        placeholder='Priority'
+        header='Priority'
         items={[]}
         onChange={() => {}}
-        width="128px"
+        width='128px'
       />
       <DateRangePicker
         startDate={dateRangeFilter.start}
@@ -41,8 +42,8 @@ const TasksFilters = ({ dateRangeFilter, onDateRangeChange }) => {
         css={`
           width: ${32 * GU}px;
         `}
-        placeholder="Search"
-        value=""
+        placeholder='Search'
+        value=''
         onChange={() => {}}
       />
     </div>

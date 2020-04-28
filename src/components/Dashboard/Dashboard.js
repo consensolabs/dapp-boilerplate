@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { Button, Header, Split } from '@aragon/ui'
 
@@ -14,8 +16,8 @@ function Dashboard() {
   return (
     <React.Fragment>
       <Header
-        primary="Dashboard"
-        secondary={<Button label="Buy ANJ" mode="strong" />}
+        primary='Dashboard'
+        secondary={<Button label='Buy ANJ' mode='strong' />}
       />
       <ProfileHeader active />
       <Split

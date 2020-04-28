@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useMemo, useState } from 'react'
 import {
   ContextMenu,
@@ -36,7 +38,7 @@ const TaskTable = ({ tasks, connectedAccount }) => {
   const { below } = useViewport()
   const compactMode = below('medium')
 
-  const handleSelectedDateRangeChange = range => {
+  const handleSelectedDateRangeChange = (range) => {
     setPage(0)
     setSelectedDateRange(range)
   }
@@ -85,7 +87,7 @@ const TaskTable = ({ tasks, connectedAccount }) => {
             </div>
 
             {!compactMode && (
-              <div css="text-align: right;">
+              <div css='text-align: right;'>
                 <DateRangePicker
                   startDate={selectedDateRange.start}
                   endDate={selectedDateRange.end}

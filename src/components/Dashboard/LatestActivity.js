@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { Box, GU, IdentityBadge, textStyle, useTheme } from '@aragon/ui'
 
@@ -10,7 +12,7 @@ function LatestActivity() {
   const theme = useTheme()
 
   return (
-    <Box heading="latest activity" padding={0}>
+    <Box heading='latest activity' padding={0}>
       <Stepper
         lineColor={theme.accent.alpha(0.2)}
         lineExtraHeight={10}

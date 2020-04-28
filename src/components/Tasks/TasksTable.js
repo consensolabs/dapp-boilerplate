@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useMemo, useState } from 'react'
 import {
   ContextMenu,
@@ -35,7 +37,7 @@ const TaskTable = ({ tasks }) => {
   const { below } = useViewport()
   const compactMode = below('medium')
 
-  const handleSelectedDateRangeChange = range => {
+  const handleSelectedDateRangeChange = (range) => {
     setPage(0)
     setSelectedDateRange(range)
   }
@@ -81,7 +83,7 @@ const TaskTable = ({ tasks }) => {
               Upcoming tasks
             </div>
 
-            <div css="text-align: right;">
+            <div css='text-align: right;'>
               <DropDown
                 placeholder={
                   <div
@@ -99,10 +101,10 @@ const TaskTable = ({ tasks }) => {
                     </span>
                   </div>
                 }
-                header="Actions"
+                header='Actions'
                 items={[]}
                 onChange={() => {}}
-                width="162px"
+                width='162px'
               />
             </div>
           </div>

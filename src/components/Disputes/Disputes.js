@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useCallback, useMemo, useState } from 'react'
 import { Button, Header } from '@aragon/ui'
 
@@ -16,8 +18,8 @@ function Disputes() {
   return (
     <React.Fragment>
       <Header
-        primary="Disputes"
-        secondary={!selectedDispute && <Button label="Buy ANJ" />}
+        primary='Disputes'
+        secondary={!selectedDispute && <Button label='Buy ANJ' />}
       />
       {selectedDispute ? (
         <DisputeDetail dispute={selectedDispute} onBack={handleBack} />
@@ -38,13 +40,13 @@ function Disputes() {
   )
 }
 
-const useSelectedDispute = disputes => {
+const useSelectedDispute = (disputes) => {
   const [selectedDisputeId, setSelectedDisputeId] = useState(-1)
 
-  const selectDispute = disputeId => setSelectedDisputeId(disputeId)
+  const selectDispute = (disputeId) => setSelectedDisputeId(disputeId)
 
   const selectedDispute = useMemo(
-    () => disputes.find(dispute => dispute.id === selectedDisputeId) || null,
+    () => disputes.find((dispute) => dispute.id === selectedDisputeId) || null,
     [disputes, selectedDisputeId]
   )
 

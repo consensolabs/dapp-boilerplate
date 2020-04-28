@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Subject } from 'rxjs'
@@ -15,16 +17,16 @@ function useIdentity(address) {
     IdentityContext
   )
 
-  const handleNameChange = useCallback(metadata => {
+  const handleNameChange = useCallback((metadata) => {
     setName(metadata ? metadata.name : null)
   }, [])
 
   const handleShowLocalIdentityModal = useCallback(
-    address => {
+    (address) => {
       // Emit an event whenever the modal is closed (when the promise resolves)
       return showLocalIdentityModal(address)
         .then(() => updates$.next(address))
-        .catch(e => null)
+        .catch((e) => null)
     },
     [showLocalIdentityModal, updates$]
   )
@@ -32,7 +34,7 @@ function useIdentity(address) {
   useEffect(() => {
     resolve(address).then(handleNameChange)
 
-    const subscription = updates$.subscribe(updatedAddress => {
+    const subscription = updates$.subscribe((updatedAddress) => {
       if (updatedAddress.toLowerCase() === address.toLowerCase()) {
         // Resolve and update state when the identity have been updated
         resolve(address).then(handleNameChange)

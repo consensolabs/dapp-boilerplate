@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { GU, Layout, useViewport } from '@aragon/ui'
 import NavBar from './NavBar'
