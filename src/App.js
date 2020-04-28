@@ -23,6 +23,7 @@ function App() {
             <Route path='/dashboard' component={Dashboard} />
             <Route exact path='/tasks' component={Tasks} />
             <Route exact path='/disputes' component={Disputes} />
+
             <Route component={ErrorPage} />
           </Switch>
         </MainView>

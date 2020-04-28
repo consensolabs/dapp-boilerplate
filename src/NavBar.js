@@ -32,9 +32,9 @@ function NavBar() {
         Menu
       </h2>
 
-      <NavItem to='/dashboard' icon={menuIcon} label='Dashboard' />
-      <NavItem to='/tasks' icon={menuIcon} label='Tasks' />
-      <NavItem to='/disputes' icon={menuIcon} label='Disputes' />
+      <NavItem to='/disputes' icon={menuIcon} label='Dashboard' />
+      <NavItem to='/tasks' icon={menuIcon} label='Leaderboard' />
+      <NavItem to='/dashboard' icon={menuIcon} label='Profile' />
     </nav>
   )
 }

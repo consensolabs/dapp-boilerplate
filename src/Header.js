@@ -13,7 +13,7 @@ function Header() {
         z-index: 3;
       `}
     >
-      Court Demo
+      GitFunded
     </div>
   )
 }
