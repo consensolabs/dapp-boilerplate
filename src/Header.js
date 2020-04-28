@@ -16,9 +16,9 @@ function Header() {
         `}
       >
         GitFunded
-      </div>
-      <div>
-        <Wallet />
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Wallet />
+        </div>
       </div>
     </>
   )
