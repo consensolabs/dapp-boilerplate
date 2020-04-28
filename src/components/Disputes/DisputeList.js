@@ -3,7 +3,6 @@
 import React from 'react'
 import {
   Bar,
-  Button,
   CardLayout,
   DateRangePicker,
   DropDown,
@@ -71,7 +70,7 @@ function DisputeList({ disputes, selectDispute }) {
           // endDate={disputeDateRangeFilter.end}
           // onChange={handleDisputeDateRangeFilterChange}
           />
-          <Button>My disputes</Button>
+          {/* <Button>My disputes</Button> */}
         </div>
       </Bar>
       <CardLayout columnWidthMin={30 * GU} rowHeight={307}>

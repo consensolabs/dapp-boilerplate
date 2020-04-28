@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
 import React, { useCallback, useMemo, useState } from 'react'
-import { Button, Header } from '@aragon/ui'
+import { Header } from '@aragon/ui'
 
 import DisputeDetail from './DisputeDetail'
 import DisputeList from './DisputeList'
@@ -17,10 +17,7 @@ function Disputes() {
 
   return (
     <React.Fragment>
-      <Header
-        primary='Disputes'
-        secondary={!selectedDispute && <Button label='Buy ANJ' />}
-      />
+      <Header primary='Dashboard' />
       {selectedDispute ? (
         <DisputeDetail dispute={selectedDispute} onBack={handleBack} />
       ) : (
