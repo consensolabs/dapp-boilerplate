@@ -6,15 +6,17 @@ import { Main } from '@aragon/ui'
 
 import theme from './theme-court'
 
-import MainView from './MainView'
+import MainView from './components/MainView'
 import ErrorPage from './ErrorPage'
 
 import Dashboard from './components/Dashboard/Dashboard'
 import Tasks from './components/Tasks/Tasks'
 import Disputes from './components/Disputes/Disputes'
+import { WalletProvider } from './providers/Wallet'
 
 function App() {
   return (
+  <WalletProvider>
     <BrowserRouter>
       <Main layout={false} theme={theme}>
         <MainView>
@@ -29,6 +31,7 @@ function App() {
         </MainView>
       </Main>
     </BrowserRouter>
+  </WalletProvider>
   )
 }
 
