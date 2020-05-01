@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useCallback, useEffect, useState } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 import { ButtonBase, GU, springs, textStyle, useTheme } from '@aragon/ui'
@@ -55,21 +57,21 @@ function MenuPanel({ showHeaderLogo, onOpenPage }) {
           Menu
         </h2>
         <MenuItem
-          to="/dashboard"
-          icon={dashboardMenuIcon}
-          label="Dashboard"
-          onActivate={onOpenPage}
-        />
-        <MenuItem
-          to="/tasks"
-          icon={tasksMenuIcon}
-          label="Tasks"
-          onActivate={onOpenPage}
-        />
-        <MenuItem
-          to="/disputes"
+          to='/disputes'
           icon={disputesMenuIcon}
-          label="Disputes"
+          label='Dashboard'
+          onActivate={onOpenPage}
+        />
+        <MenuItem
+          to='/tasks'
+          icon={tasksMenuIcon}
+          label='Leaderboard'
+          onActivate={onOpenPage}
+        />
+        <MenuItem
+          to='/dashboard'
+          icon={dashboardMenuIcon}
+          label='Profile'
           onActivate={onOpenPage}
         />
       </div>
@@ -120,7 +122,7 @@ function MenuItem({ to, icon, label, onActivate }) {
         `}
       />
 
-      <img src={icon} alt="" />
+      <img src={icon} alt='' />
       <span
         css={`
           margin-left: ${1 * GU}px;
@@ -201,7 +203,7 @@ function AnimatedMenuPanel({
             style={{
               position: autoClosing ? 'absolute' : 'relative',
               transform: menuPanelProgress.interpolate(
-                v =>
+                (v) =>
                   `translate3d(
                   ${lerp(
                     v,

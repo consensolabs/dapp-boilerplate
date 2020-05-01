@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-
 import React from 'react'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 

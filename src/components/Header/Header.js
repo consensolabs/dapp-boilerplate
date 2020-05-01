@@ -1,5 +1,7 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react'
-import { ButtonIcon, GU, IconMenu } from '@aragon/ui'
+import { ButtonIcon, GU, IconMenu, Button } from '@aragon/ui'
 import AccountModule from '../Account/AccountModule'
 // import ActivityButton from '../Activity/ActivityButton'
 import GlobalPreferencesButton from '../GlobalPreferences/GlobalPreferencesButton'
@@ -33,7 +35,7 @@ const Header = React.memo(function Header({
         `}
       >
         {compactMode ? (
-          <ButtonIcon label="Open menu" onClick={toggleMenuPanel}>
+          <ButtonIcon label='Open menu' onClick={toggleMenuPanel}>
             <IconMenu />
           </ButtonIcon>
         ) : (
@@ -72,6 +74,7 @@ const Header = React.memo(function Header({
           `}
         />
       </div>
+      <Button>Import</Button>
     </header>
   )
 })

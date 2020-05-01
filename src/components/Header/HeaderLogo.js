@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { GU, textStyle } from '@aragon/ui'
 import headerLogoSvg from '../../assets/HeaderLogo.svg'
@@ -11,7 +12,7 @@ function HeaderLogo() {
       `}
     >
       <img
-        alt=""
+        alt=''
         src={headerLogoSvg}
         width={4 * GU}
         css={`
@@ -26,7 +27,7 @@ function HeaderLogo() {
           ${textStyle('body1')};
         `}
       >
-        Aragon Court
+        GitFunded
       </h1>
     </div>
   )

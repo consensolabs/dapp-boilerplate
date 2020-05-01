@@ -29,12 +29,11 @@ function NavBar() {
           ${textStyle('label2')};
         `}
       >
-        Menu
+        Navbar
       </h2>
-
-      <NavItem to='/disputes' icon={menuIcon} label='Dashboard' />
-      <NavItem to='/tasks' icon={menuIcon} label='Leaderboard' />
       <NavItem to='/dashboard' icon={menuIcon} label='Profile' />
+      <NavItem to='/disputes' icon={menuIcon} label='Profile' />
+      <NavItem to='/tasks' icon={menuIcon} label='Leaderboard' />
     </nav>
   )
 }
