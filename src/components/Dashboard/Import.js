@@ -9,9 +9,13 @@ function Import() {
     setOpened(false)
   }
 
+  const openPanel = () => {
+    setOpened(true)
+  }
+
   return (
     <>
-      <Button mode='strong' onClick={() => setOpened(true)}>
+      <Button mode='strong' onClick={openPanel}>
         Import
       </Button>
 
