@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react'
-import { Header, Split } from '@aragon/ui'
+import { Header, Split, Button } from '@aragon/ui'
 
 import ProfileHeader from './ProfileHeader'
 import DashboardStats from './DashboardStats'
@@ -15,6 +15,16 @@ function Dashboard() {
 
   return (
     <React.Fragment>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: '1rem',
+        }}
+      >
+        <Button mode='strong'>Import</Button>
+      </div>
+
       <Header primary='Profile' />
       <ProfileHeader active />
       <Split
