@@ -34,6 +34,7 @@ function NavBar() {
       <NavItem to='/dashboard' icon={menuIcon} label='Dashboard' />
       <NavItem to='/profile' icon={menuIcon} label='Profile' />
       <NavItem to='/leaderboard' icon={menuIcon} label='Leader board' />
+      <NavItem to='/sample' icon={menuIcon} label='Sample Contract' />
     </nav>
   )
 }

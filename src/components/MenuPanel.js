@@ -74,6 +74,12 @@ function MenuPanel({ showHeaderLogo, onOpenPage }) {
           label='Profile'
           onActivate={onOpenPage}
         />
+        <MenuItem
+            to='/sample'
+            icon={dashboardMenuIcon}
+            label='Sample'
+            onActivate={onOpenPage}
+        />
       </div>
     </nav>
   )
