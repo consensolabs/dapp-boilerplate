@@ -24,9 +24,9 @@ function App() {
           <MainView>
             <Redirect from='/' to='/dashboard' />
             <Switch>
-              <Route path='/dashboard' component={Dashboard} />
-              <Route exact path='/tasks' component={Tasks} />
-              <Route exact path='/disputes' component={Disputes} />
+              <Route exact path='/profile' component={Dashboard} />
+              <Route exact path='/leaderboard' component={Tasks} />
+              <Route exact path='/dashboard' component={Disputes} />
 
               <Route component={ErrorPage} />
             </Switch>

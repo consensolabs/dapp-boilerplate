@@ -57,19 +57,19 @@ function MenuPanel({ showHeaderLogo, onOpenPage }) {
           Menu
         </h2>
         <MenuItem
-          to='/disputes'
+          to='/dashboard'
           icon={disputesMenuIcon}
           label='Dashboard'
           onActivate={onOpenPage}
         />
         <MenuItem
-          to='/tasks'
+          to='/leaderboard'
           icon={tasksMenuIcon}
           label='Leaderboard'
           onActivate={onOpenPage}
         />
         <MenuItem
-          to='/dashboard'
+          to='/profile'
           icon={dashboardMenuIcon}
           label='Profile'
           onActivate={onOpenPage}
