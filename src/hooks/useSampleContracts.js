@@ -32,8 +32,8 @@ export function useCounterActions() {
         counterContract.increaseCounter(amount, {
           gasLimit: GAS_LIMIT,
         }),
-        'increaseCounter',
-        {}
+        'increaseCount',
+        { amount: amount }
       )
     },
     [addActivity, counterContract]
@@ -45,8 +45,8 @@ export function useCounterActions() {
         counterContract.decreaseCounter(amount, {
           gasLimit: GAS_LIMIT,
         }),
-        'decreaseCounter',
-        {}
+        'decreaseCount',
+        { amount: amount }
       )
     },
     [addActivity, counterContract]
