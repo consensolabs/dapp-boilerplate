@@ -6,19 +6,22 @@ import styles from './Counter.module.scss'
 import {
   useCounterCount,
   useCounterActions,
+  useCounterFetch,
 } from '../../hooks/useSampleContracts'
 
 export default function Counter(props) {
+  // eslint-disable-next-line no-unused-vars
   const countInit = useCounterCount()
+  const { fetch, count } = useCounterFetch()
   const [sending, setSending] = useState(false)
   const { increase, decrease } = useCounterActions()
-
   const increaseCounter = async number => {
     try {
       if (!sending) {
         setSending(true)
         await increase(number)
         setSending(false)
+        fetch()
       }
     } catch (e) {
       setSending(false)
@@ -31,8 +34,9 @@ export default function Counter(props) {
       if (!sending) {
         setSending(true)
         //       await instance.methods.increaseCounter(number).send({ from: accounts[0] });
-        decrease(number)
+        await decrease(number)
         setSending(false)
+        fetch()
       }
     } catch (e) {
       setSending(false)
@@ -46,7 +50,9 @@ export default function Counter(props) {
       <React.Fragment>
         <div className={styles.dataPoint}>
           <div className={styles.label}>Counter Value:</div>
-          <div className={styles.value}>{parseInt(countInit)}</div>
+          <div className={styles.value}>
+            {parseInt(count) || parseInt(countInit)}
+          </div>
         </div>
 
         <React.Fragment>

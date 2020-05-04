@@ -55,6 +55,19 @@ export function useCounterActions() {
   return { increase, decrease }
 }
 
+export function useCounterFetch() {
+  const counterContract = useCounterContract()
+  const [count, setCount] = useState(0)
+
+  const fetch = useCallback(() => {
+    counterContract.getCounter().then(count => {
+      setCount(count)
+    })
+  }, [counterContract])
+
+  return { fetch, count }
+}
+
 export function useListCount() {
   const [count, setCount] = useState(1)
 
