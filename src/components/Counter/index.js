@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useState } from 'react'
 import { Button, Loader } from 'rimble-ui'
 
 import styles from './Counter.module.scss'
-
 import {
   useCounterCount,
   useCounterActions,
@@ -15,7 +16,7 @@ export default function Counter(props) {
   const { fetch, count } = useCounterFetch()
   const [sending, setSending] = useState(false)
   const { increase, decrease } = useCounterActions()
-  const increaseCounter = async number => {
+  const increaseCounter = async (number) => {
     try {
       if (!sending) {
         setSending(true)
@@ -29,7 +30,7 @@ export default function Counter(props) {
     }
   }
 
-  const decreaseCounter = async number => {
+  const decreaseCounter = async (number) => {
     try {
       if (!sending) {
         setSending(true)
@@ -60,16 +61,16 @@ export default function Counter(props) {
             <strong>Counter Actions</strong>
           </div>
           <div className={styles.buttons}>
-            <Button onClick={() => increaseCounter(1)} size="small">
+            <Button onClick={() => increaseCounter(1)} size='small'>
               {sending ? (
-                <Loader className={styles.loader} color="white" />
+                <Loader className={styles.loader} color='white' />
               ) : (
                 <span> Increase Counter by 1</span>
               )}
             </Button>
-            <Button onClick={() => decreaseCounter(1)} size="small">
+            <Button onClick={() => decreaseCounter(1)} size='small'>
               {sending ? (
-                <Loader className={styles.loader} color="white" />
+                <Loader className={styles.loader} color='white' />
               ) : (
                 <span> Decrease Counter by 1</span>
               )}
