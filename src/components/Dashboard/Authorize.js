@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { Button } from '@aragon/ui'
 
-function Import() {
+function Authorize() {
   const CLIENT_ID = '69bc88033c4b1bc2b4dc'
   const REDIRECT_URI = 'http://localhost:3000/dashboard'
 
@@ -21,18 +21,21 @@ function Import() {
       .then((response) => response.json())
       .then(({ token }) => {
         console.log(token)
+        console.log(token)
+        localStorage.setItem('GithubToken', token)
       })
   }, [])
 
   return (
     <>
       <a
+        style={{ textDecoration: 'none' }}
         href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
       >
-        <Button mode='primary'>Import</Button>
+        <Button mode='strong'>Authorize</Button>
       </a>
     </>
   )
 }
 
-export default Import
+export default Authorize

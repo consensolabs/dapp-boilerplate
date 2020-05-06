@@ -1,10 +1,9 @@
 /* eslint-disable prettier/prettier */
-
 import React from 'react'
 import { Header, Split } from '@aragon/ui'
 import ProfileHeader from './ProfileHeader'
 import DashboardStats from './DashboardStats'
-import Import from './Import'
+import Authorize from './Authorize'
 // import TaskTable from './TaskTable'
 // import { tasks } from '../../mock-data'
 
@@ -22,7 +21,7 @@ function Dashboard() {
           marginTop: '1rem',
         }}
       >
-        <Import />
+        <Authorize />
       </div>
 
       <Header primary='Profile' />
