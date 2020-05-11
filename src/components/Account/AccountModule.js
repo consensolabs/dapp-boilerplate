@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useWallet } from 'use-wallet'
 import { Button, GU, IconConnect, springs, useViewport } from '@aragon/ui'
@@ -52,14 +53,14 @@ function AccountModule() {
 
   const clearError = useCallback(() => setActivationError(null), [])
 
-  const toggle = useCallback(() => setOpened(opened => !opened), [])
+  const toggle = useCallback(() => setOpened((opened) => !opened), [])
 
   const handleCancelConnection = useCallback(() => {
     wallet.deactivate()
   }, [wallet])
 
   const activate = useCallback(
-    async providerId => {
+    async (providerId) => {
       try {
         await wallet.activate(providerId)
       } catch (error) {
@@ -111,7 +112,7 @@ function AccountModule() {
       return 'providers'
     })()
 
-    const screenIndex = SCREENS.findIndex(screen => screen.id === screenId)
+    const screenIndex = SCREENS.findIndex((screen) => screen.id === screenId)
     const direction = previousScreenIndex.current > screenIndex ? -1 : 1
 
     previousScreenIndex.current = screenIndex
@@ -123,7 +124,7 @@ function AccountModule() {
   const screenId = screen.id
 
   const handlePopoverClose = useCallback(
-    reject => {
+    (reject) => {
       if (screenId === 'connecting' || screenId === 'error') {
         // reject closing the popover
         return false
@@ -145,7 +146,7 @@ function AccountModule() {
   return (
     <div
       ref={buttonRef}
-      tabIndex="0"
+      tabIndex='0'
       css={`
         display: flex;
         align-items: center;
@@ -162,7 +163,7 @@ function AccountModule() {
       ) : (
         <Button
           icon={<IconConnect />}
-          label="Enable account"
+          label='Enable account'
           onClick={toggle}
           display={compactMode ? 'icon' : 'all'}
         />
@@ -177,7 +178,7 @@ function AccountModule() {
         opener={buttonRef.current}
         visible={opened}
       >
-        <div ref={popoverFocusElement} tabIndex="0" css="outline: 0">
+        <div ref={popoverFocusElement} tabIndex='0' css='outline: 0'>
           <Transition
             native
             immediate={!animate}

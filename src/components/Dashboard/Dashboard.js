@@ -3,7 +3,7 @@ import React from 'react'
 import { Header, Split } from '@aragon/ui'
 import ProfileHeader from './ProfileHeader'
 import DashboardStats from './DashboardStats'
-import Authorize from './Authorize'
+// import Authorize from './Authorize'
 // import TaskTable from './TaskTable'
 // import { tasks } from '../../mock-data'
 
@@ -14,16 +14,6 @@ function Dashboard() {
 
   return (
     <React.Fragment>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          marginTop: '1rem',
-        }}
-      >
-        <Authorize />
-      </div>
-
       <Header primary='Profile' />
       <ProfileHeader active />
       <Split

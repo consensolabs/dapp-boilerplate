@@ -1,11 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react'
-import { SidePanel, Button } from '@aragon/ui'
+import { SidePanel, Button, DropDown } from '@aragon/ui'
+// import GitHub from 'github-api'
 
 function Import() {
   const [opened, setOpened] = useState(false)
 
   const token = localStorage.getItem('GithubToken')
+  console.log(token)
 
   function handleButtonClick() {
     setOpened(true)
@@ -13,18 +15,6 @@ function Import() {
 
   function handleClose() {
     setOpened(false)
-  }
-  function test() {
-    // fetch('https://jsonplaceholder.typicode.com/todos/1')
-    //   .then((response) => response.json())
-    //   .then((json) => console.log(json))
-
-    fetch('https://api.github.com/users', {
-      method: 'GET',
-      headers: {
-        Authorization: token,
-      },
-    }).then((res) => console.log(res.json()))
   }
 
   return (
@@ -34,9 +24,10 @@ function Import() {
       </Button>
 
       <SidePanel onClose={handleClose} title='Repository' opened={opened}>
-        <Button onClick={test} mode='wide'>
-          Fetch Repos from GitHub
-        </Button>
+        <DropDown
+          items={['Wandering Thunder', 'Black Wildflower', 'Ancient Paper']}
+          placeholder='Select a Repository'
+        />
       </SidePanel>
     </>
   )

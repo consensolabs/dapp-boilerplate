@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@aragon/ui": "^1.2.0",
+    "@octokit/rest": "^17.8.0",
     "clipboard-polyfill": "^2.8.6",
     "dayjs": "^1.8.14",
     "github-api": "^3.3.0",

@@ -1,13 +1,14 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 
-import { Box, Button, GU, textStyle, useViewport } from '@aragon/ui'
+import { Box, GU, textStyle, useViewport } from '@aragon/ui'
 
-import ProfileIcon from '../../assets/profile.png'
+// import ProfileIcon from '../../assets/profile.png'
 import ANJBadgeIcon from '../../assets/anjBadge.svg'
 import IconCheck from '../../assets/IconCheck.svg'
 
 import Balances from './Balances'
+import Connect from './Connect'
 
 export default function ProfileHeader({ active }) {
   const { below } = useViewport()
@@ -41,7 +42,12 @@ export default function ProfileHeader({ active }) {
               margin-right: ${3 * GU}px;
             `}
           >
-            <img alt='profile' src={ProfileIcon} />
+            {/* <img alt='profile' src={ProfileIcon} /> */}
+            <img
+              style={{ borderRadius: '10rem' }}
+              alt=''
+              src='https://github.com/abhinav-anshul.png?size=80'
+            />
             <img
               alt='active-juror'
               src={ANJBadgeIcon}
@@ -63,7 +69,7 @@ export default function ProfileHeader({ active }) {
                   margin-right: ${2 * GU}px;
                 `}
               >
-                Eliza Stewart
+                Name :
               </span>
               {active && (
                 <div
@@ -104,7 +110,7 @@ export default function ProfileHeader({ active }) {
         </div>
         {!below('medium') && (
           <div>
-            <Button>
+            {/* <Button>
               <span
                 css={`
                   color: #636971;
@@ -112,7 +118,8 @@ export default function ProfileHeader({ active }) {
               >
                 View profile
               </span>
-            </Button>
+            </Button> */}
+            <Connect />
           </div>
         )}
       </div>
