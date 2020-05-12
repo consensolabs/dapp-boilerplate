@@ -36,6 +36,11 @@ function Import() {
         <TextInput placeholder='Provide a Name' />
         <br />
         <TextInput placeholder='Budget' />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Button mode='positive'>Import Project</Button>
       </SidePanel>
     </>
   )
