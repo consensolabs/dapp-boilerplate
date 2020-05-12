@@ -9,7 +9,7 @@ import IconCheck from '../../assets/IconCheck.svg'
 
 import Balances from './Balances'
 import Connect from './Connect'
-import ConnectNew from './ConnectNew'
+import Authorize from '../../Authorize'
 
 export default function ProfileHeader({ active }) {
   const { below } = useViewport()
@@ -121,7 +121,7 @@ export default function ProfileHeader({ active }) {
               </span>
             </Button> */}
             <Connect />
-            <ConnectNew />
+            <Authorize />
           </div>
         )}
       </div>
