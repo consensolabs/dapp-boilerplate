@@ -24,11 +24,10 @@ function App() {
           <MainView>
             {/* <Redirect from='/' to='/dashboard' /> */}
             <Switch>
-              <Route path='/' component={Dashboard} />
+              {/* <Route path='/' component={Dashboard} /> */}
               <Route exact path='/dashboard' component={Dashboard} />
               <Route exact path='/tasks' component={Tasks} />
               <Route exact path='/disputes' component={Disputes} />
-              <Route path='/?code=1fd6f91679eb1d03eee6' component={Disputes} />
               <Route component={ErrorPage} />
             </Switch>
           </MainView>

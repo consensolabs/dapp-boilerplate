@@ -8,7 +8,6 @@ import ANJBadgeIcon from '../../assets/anjBadge.svg'
 import IconCheck from '../../assets/IconCheck.svg'
 
 import Balances from './Balances'
-import Connect from './Connect'
 import Authorize from '../../Authorize'
 
 export default function ProfileHeader({ active }) {
@@ -120,7 +119,7 @@ export default function ProfileHeader({ active }) {
                 View profile
               </span>
             </Button> */}
-            <Connect />
+
             <Authorize />
           </div>
         )}

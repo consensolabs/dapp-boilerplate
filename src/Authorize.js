@@ -5,13 +5,22 @@ import { API } from './GithubAPI'
 
 function handleClick() {
   API()
+  console.log('clcikkkkkkk')
 }
 
 function Authorize() {
   return (
-    <div>
-      <Button onClick={handleClick}>Authorize</Button>
-    </div>
+    <React.Fragment>
+      {localStorage.getItem('access_token') === undefined ? (
+        <Button mode='normal' onClick={handleClick}>
+          Authorize
+        </Button>
+      ) : (
+        <Button mode='positive' onClick={handleClick}>
+          Authorized
+        </Button>
+      )}
+    </React.Fragment>
   )
 }
 
