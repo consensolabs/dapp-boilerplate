@@ -21,6 +21,8 @@ function Disputes() {
     <React.Fragment>
       <Header primary='Dashboard' />
       <Import />
+      <br />
+      <br />
       {selectedDispute ? (
         <DisputeDetail dispute={selectedDispute} onBack={handleBack} />
       ) : (

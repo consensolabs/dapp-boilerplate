@@ -1,20 +1,46 @@
 /* eslint-disable  */
 import React, { useState, useEffect } from 'react'
-import { SidePanel, Button, DropDown, TextInput } from '@aragon/ui'
+import { SidePanel, Button, DropDown, TextInput, textStyle } from '@aragon/ui'
 import { Octokit } from '@octokit/rest'
 
 function Import() {
   const [opened, setOpened] = useState(false)
 
-  const token = localStorage.getItem('GithubToken')
-  // console.log(token)
+  const [list, setList] = useState([])
 
-  function handleButtonClick() {
+  // const [selected, setSelected] = useState(-1)
+
+  const token = localStorage.getItem('GithubToken')
+
+  async function handleButtonClick() {
     setOpened(true)
+    await octokit.repos
+      .listForUser({
+        username: 'abhinav-anshul',
+      })
+
+      .then((details) => {
+        let x = 0
+        let arr = []
+        while (x < details.data.length) {
+          arr.push(details.data[x].name)
+          x++
+        }
+
+        setList([...arr])
+      })
   }
 
   function handleClose() {
     setOpened(false)
+  }
+
+  const [selected, setSelected] = useState(-1)
+
+  function handleOnChange(index, items) {
+    console.log('onchangeclick')
+    console.log('index', index)
+    setSelected(index)
   }
 
   const OAUTH_TOKEN = localStorage.getItem('access_token')
@@ -22,22 +48,6 @@ function Import() {
   const octokit = new Octokit({
     auth: OAUTH_TOKEN,
   })
-
-  const [isShowDropdown, setDropdown] = useState(false)
-  const list = []
-
-  async function fetchRepos() {
-    await octokit.repos
-      .listForUser({
-        username: 'abhinav-anshul',
-      })
-      .then((details) => list.push(details.data[0].name))
-
-    setDropdown(true)
-
-    console.log('List Array', list)
-    console.log([...list])
-  }
 
   return (
     <>
@@ -49,11 +59,12 @@ function Import() {
         <br />
         <br />
         <br />
-        <Button onClick={fetchRepos}>Fetch</Button>
-        {isShowDropdown ? (
-          <DropDown items={[...list] || []} placeholder='Select a Repository' />
-        ) : null}
-        {console.log('?????????', [...list])}
+
+        <DropDown
+          selected={selected}
+          onChange={handleOnChange}
+          items={[...list]}
+        />
         <br />
         <TextInput placeholder='Provide a Name' />
         <br />
