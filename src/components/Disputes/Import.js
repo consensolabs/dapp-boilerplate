@@ -1,5 +1,5 @@
-/* eslint-disable prettier/prettier */
-import React, { useState } from 'react'
+/* eslint-disable  */
+import React, { useState, useEffect } from 'react'
 import { SidePanel, Button, DropDown, TextInput } from '@aragon/ui'
 import { Octokit } from '@octokit/rest'
 
@@ -7,7 +7,7 @@ function Import() {
   const [opened, setOpened] = useState(false)
 
   const token = localStorage.getItem('GithubToken')
-  console.log(token)
+  // console.log(token)
 
   function handleButtonClick() {
     setOpened(true)
@@ -23,19 +23,20 @@ function Import() {
     auth: OAUTH_TOKEN,
   })
 
-  // async function userInfo() {
-  //   const { data } = await octokit.request('/user')
-  //   console.log(data)
-  //   return data
-  // }
+  const [isShowDropdown, setDropdown] = useState(false)
   const list = []
-  function fetchRepos() {
-    octokit.repos
+
+  async function fetchRepos() {
+    await octokit.repos
       .listForUser({
         username: 'abhinav-anshul',
       })
-      .then((details) => console.log(list.push(details.data)))
-    console.log(list)
+      .then((details) => list.push(details.data[0].name))
+
+    setDropdown(true)
+
+    console.log('List Array', list)
+    console.log([...list])
   }
 
   return (
@@ -43,113 +44,16 @@ function Import() {
       <Button mode='strong' onClick={handleButtonClick}>
         Import Project
       </Button>
-      <Button onClick={fetchRepos}>Fetch</Button>
 
       <SidePanel onClose={handleClose} title='Repository' opened={opened}>
         <br />
         <br />
         <br />
-        <DropDown
-          items={[
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-            'list',
-          ]}
-          placeholder='Select a Repository'
-        />
+        <Button onClick={fetchRepos}>Fetch</Button>
+        {isShowDropdown ? (
+          <DropDown items={[...list] || []} placeholder='Select a Repository' />
+        ) : null}
+        {console.log('?????????', [...list])}
         <br />
         <TextInput placeholder='Provide a Name' />
         <br />
