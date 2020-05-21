@@ -1,7 +1,7 @@
+/* eslint-disable */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { EthIdenticon, GU, RADIUS, textStyle, useTheme } from '@aragon/ui'
-
 import { useWallet } from 'use-wallet'
 import HeaderModule from '../Header/HeaderModule'
 import { shortenAddress } from '../../lib/web3-utils'
@@ -13,7 +13,7 @@ function AccountButton({ label, onClick }) {
   return (
     <HeaderModule
       icon={
-        <div css="position: relative">
+        <div css='position: relative'>
           <EthIdenticon address={wallet.account} radius={RADIUS} />
           <div
             css={`

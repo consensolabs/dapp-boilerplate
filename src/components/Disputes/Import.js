@@ -2,21 +2,41 @@
 import React, { useState, useEffect } from 'react'
 import { SidePanel, Button, DropDown, TextInput, textStyle } from '@aragon/ui'
 import { Octokit } from '@octokit/rest'
+import { useWallet } from 'use-wallet'
 
 function Import() {
+  const wallet = useWallet()
+
+  const [USERNAME, SETUSERNAME] = useState(null)
+
   const [opened, setOpened] = useState(false)
 
   const [list, setList] = useState([])
 
-  // const [selected, setSelected] = useState(-1)
+  const TOKEN = localStorage.getItem('ACCESS TOKEN')
 
-  const token = localStorage.getItem('GithubToken')
+  let USERNAMETEST = localStorage.getItem('USERNAME')
+
+  const octokit = new Octokit({
+    auth: TOKEN,
+  })
+
+  // async function userInfo() {
+  //   const { data } = await octokit.request('/user')
+  //   console.log(data.login)
+  //   SETUSERNAME(data.login)
+  //   return data.login
+  // }
+  // userInfo()
 
   async function handleButtonClick() {
+    console.log(localStorage.getItem('ACCESS TOKEN'))
+
     setOpened(true)
     await octokit.repos
       .listForUser({
-        username: 'abhinav-anshul',
+        // username: 'abhinav-anshul',
+        username: USERNAMETEST,
       })
 
       .then((details) => {
@@ -43,17 +63,17 @@ function Import() {
     setSelected(index)
   }
 
-  const OAUTH_TOKEN = localStorage.getItem('access_token')
-
-  const octokit = new Octokit({
-    auth: OAUTH_TOKEN,
-  })
-
   return (
     <>
+      {wallet.account !== null ? (
+        <Button mode='strong' onClick={handleButtonClick}>
+          Import Project
+        </Button>
+      ) : null}
+      {/* 
       <Button mode='strong' onClick={handleButtonClick}>
         Import Project
-      </Button>
+      </Button> */}
 
       <SidePanel onClose={handleClose} title='Repository' opened={opened}>
         <br />

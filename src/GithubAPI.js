@@ -16,9 +16,10 @@ console.log('CODE', CODE)
 //Getting access token via code
 
 if (CODE) {
-  fetch(`https://gitfund-oauth.herokuapp.com/authenticate/${CODE}`)
-    .then((response) => response.json())
-    .then(({ token }) => localStorage.setItem('access_token', token))
+  fetch(
+    `https://gitfund-oauth.herokuapp.com/authenticate/${CODE}`
+  ).then((response) => console.log(response.json()))
+  // .then(({ token }) => localStorage.setItem('access_token', token))
 }
 
 console.log('LOCAL_STORAGE_TOKEN', localStorage.getItem('access_token'))

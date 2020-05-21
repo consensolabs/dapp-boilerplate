@@ -2,6 +2,8 @@
 import React from 'react'
 import { Button } from '@aragon/ui'
 import { API } from './GithubAPI'
+import GithubAPINew from './GithubAPINew'
+// import GithubAPI from './GithubAPI'
 
 function handleClick() {
   API()
@@ -16,9 +18,7 @@ function Authorize() {
           Authorize
         </Button>
       ) : (
-        <Button mode='positive' onClick={handleClick}>
-          Authorized
-        </Button>
+        <GithubAPINew />
       )}
     </React.Fragment>
   )
