@@ -12,7 +12,7 @@
     "global-hook": "^1.0.4",
     "graphql": "^14.5.8",
     "js-sha3": "^0.8.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-github-login": "^1.0.3",
