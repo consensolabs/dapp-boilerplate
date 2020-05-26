@@ -5,18 +5,6 @@ import { Button } from '@aragon/ui'
 import './test.css'
 import { Octokit } from '@octokit/rest'
 
-async function userInfo() {
-  let tokenn = localStorage.getItem('ACCESS TOKEN')
-
-  const octokit = new Octokit({
-    auth: tokenn,
-  })
-
-  const { data } = await octokit.request('/user')
-  console.log(data.login)
-  return data.login
-}
-
 function APIcall() {
   const [boolButtonText, setBoolButtonText] = useState('CONNECT')
 
@@ -52,7 +40,6 @@ function APIcall() {
           className='testcss'
         />
       </Button>
-      <button onClick={userInfo}>GET USERNAME</button>
     </div>
   )
 }
