@@ -1,5 +1,5 @@
-// rinkeby
-const CHAIN_ID_DEFAULT = 4
+// localhost
+const CHAIN_ID_DEFAULT = 1337
 
 const ENV_VARS = {
   CHAIN_ID() {
