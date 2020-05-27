@@ -13,11 +13,14 @@ function GithubAPINew() {
 
   const onFailure = (response) => console.error(response)
 
+  let clientId = '69bc88033c4b1bc2b4dc'
+  let redirectUri = 'http://localhost:3000/'
+
   return (
     <div>
       <GitHubLogin
-        clientId='69bc88033c4b1bc2b4dc'
-        redirectUri='http://localhost:3000/'
+        clientId={clientId}
+        redirectUri={redirectUri}
         onSuccess={onSuccess}
         onFailure={onFailure}
       />

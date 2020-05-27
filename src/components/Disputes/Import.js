@@ -1,6 +1,14 @@
 /* eslint-disable  */
 import React, { useState, useEffect } from 'react'
-import { SidePanel, Button, DropDown, TextInput, textStyle } from '@aragon/ui'
+import {
+  SidePanel,
+  Button,
+  DropDown,
+  TextInput,
+  textStyle,
+  Main,
+  GU,
+} from '@aragon/ui'
 import { Octokit } from '@octokit/rest'
 import { useWallet } from 'use-wallet'
 
@@ -76,7 +84,15 @@ function Import() {
           items={[...list]}
         />
         <br />
-        <TextInput placeholder='Provide a Name' />
+
+        <div
+          css={`
+            padding: ${1 * GU}px;
+          `}
+        >
+          <TextInput placeholder='Provide a Name' />
+        </div>
+
         <br />
         <TextInput placeholder='Budget' />
         <br />
