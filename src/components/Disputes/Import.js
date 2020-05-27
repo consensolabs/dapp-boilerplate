@@ -22,13 +22,11 @@ function Import() {
   const [publicRepos, setPublicRepos] = useState(0)
   async function userInfo() {
     const { data } = await octokit.request('/user')
-    console.log('userinfo', data)
     let num = data.public_repos
     setPublicRepos(num - 1)
     return data
   }
   async function listUserRepos() {
-    console.log(localStorage.getItem('ACCESS TOKEN'))
     setOpened(true)
 
     let repoList = []
@@ -37,15 +35,12 @@ function Import() {
       const { data } = await octokit.repos.listForAuthenticatedUser({
         page: page,
       })
-      console.log('data', data)
-      let x = 0
-      let arr = []
-      while (x < data.length) {
-        arr.push(data[x].name)
-        x++
+      let repoIndex = 0
+      while (repoIndex < data.length) {
+        repoList.push(data[repoIndex].name)
+        repoIndex++
       }
-      console.log('arr', arr)
-      setList([...arr])
+      setList([...repoList])
     }
 
     return repoList
@@ -58,8 +53,6 @@ function Import() {
   const [selected, setSelected] = useState(-1)
 
   function handleOnChange(index, items) {
-    console.log('onchangeclick')
-    console.log('index', index)
     setSelected(index)
   }
 
