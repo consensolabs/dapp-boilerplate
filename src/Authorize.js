@@ -7,7 +7,6 @@ import GithubAPINew from './GithubAPINew'
 
 function handleClick() {
   API()
-  console.log('clcikkkkkkk')
 }
 
 function Authorize() {

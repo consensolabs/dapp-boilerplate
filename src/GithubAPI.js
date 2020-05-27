@@ -7,11 +7,8 @@ export function API() {
 }
 
 let URL = window.location.href
-console.log('URL', URL)
 
 let CODE = URL.match(/\?code=(.*)/) && URL.match(/\?code=(.*)/)[1]
-
-console.log('CODE', CODE)
 
 //Getting access token via code
 
