@@ -33,6 +33,7 @@ function Import() {
     const user = await userInfo()
     for (let page = 1; page <= Math.ceil(user.public_repos / 100); page++) {
       const { data } = await octokit.repos.listForAuthenticatedUser({
+        per_page: 100,
         page: page,
       })
       let repoIndex = 0
